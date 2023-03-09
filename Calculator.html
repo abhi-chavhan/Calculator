@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator by Abhi Chavhan</title>
+</head>
+
+<body>
+    <!-- <div id="calculator">
+        <input type="text" id="display" disabled />
+        <br />
+        <button id="ac" class="operator">AC</button>
+        <button id="de" class="operator">DE</button>
+        <button id="." class="operator">.</button>
+        <button id="/" class="operator">/</button>
+        <br />
+
+        <button id="7">7</button>
+        <button id="8">8</button>
+        <button id="8">9</button>
+        <button id="*" class="operator">*</button>
+        <br/>
+
+        <button id="4">4</button>
+        <button id="5">5</button>
+        <button id="5">5</button>
+        <button id="-" class="operator">-</button>
+        <br/>
+
+        <button id="1">1</button>
+        <button id="2">2</button>
+        <button id="3">3</button>
+        <button id="+" class="operator">+</button> 
+        <br/>
+
+        <button id="00">00</button>
+        <button id="0">0</button>
+        <button id="=" class="equal operator">=</button>
+        
+        <br/>
+    </div> -->
+
+    <div class="container bg-red flex flex-col item-centre mx-auto m-w-20">
+        <span id="abhi">
+            <h1>Calculator by Abhi Chavhan</h1>
+            <style>
+                span{
+                    width: 110vh;
+                    text-align: end;
+                    align-items: center;
+                }
+            </style>
+        </span>
+        <div class="row">
+            <input class="inout" type="text" />
+        </div>
+        <div class="row">
+            <button class="button">C</button>
+            <button class="button">%</button>
+            <button class="button">M+</button>
+            <button class="button">M-</button>
+        </div>
+        <div class="row">
+            <button class="button">7</button>
+            <button class="button">8</button>
+            <button class="button">9</button>
+            <button class="button">*</button>
+        </div> 
+        <div class="row">
+            <button class="button">4</button>
+            <button class="button">5</button>
+            <button class="button">6</button>
+            <button class="button">/</button>
+        </div>
+        <div class="row">
+            <button class="button">1</button>
+            <button class="button">2</button>
+            <button class="button">3</button>
+            <button class="button">+</button>
+        </div>
+        <div class="row">
+            <button class="button">0</button>
+            <button class="button">.</button>
+            <button class="button">=</button>
+            <button class="button">-</button>
+        </div>
+    </div>
+
+
+
+
+    <style>
+        h1{
+            color: red;
+            
+            text-align: center;
+           
+        }
+        h1:hover{
+            color: aqua;
+            cursor: pointer;
+        }
+        body {
+            text-align: center;
+            margin: 0;
+            background: #fdfdfd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .button {
+            padding: 20px;
+        }
+        .button:hover{
+            color: aqua;
+        }
+
+        .row input {
+            margin: 0;
+            padding: 0;
+        }
+
+        .row {
+            padding: 7px;
+            margin: 0 3px;
+            font-size: 20px;
+            border: 2px solid black;
+            border-radius: 9px;
+            cursor: pointer;
+        }
+
+        /* .bg-red{
+            background: red;
+        } */
+
+        .mx-auto {
+            margin: auto;
+        }
+
+        .m-w-20 {
+            max-width: 20vw;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .flex-col {
+            flex-direction: column;
+        }
+
+        .item-centre {
+            align-items: center;
+        }
+    </style>
+
+    <script>
+        // const display = document.querySelector(#display);
+        // const button = document.querySelector(#button);
+
+        // button.forEach ( (btn) => {
+        //     btn.addEventListner("click", () =>{
+        //         if (btn.id === "=") {
+        //             display.value = eval(display.value);
+
+        //         } else if (btn.id === "ac") {
+        //             display.value = "";
+
+        //         } else if (btn.id == "de"){
+        //             display.value = display.value.slice(0, -1);
+
+        //         } else {
+        //             display.value += btn.id;
+        //         }
+        //     });
+        // });
+
+        let string = "";
+        let buttons = document.querySelectorAll('.button');
+        Array.from(buttons).forEach((button) => {
+            button.addEventListener('click', (e) => {
+                if (e.target.innerHTML == '=') {
+                    string = eval(string);
+                    document.querySelector('input').value = string;
+                }
+                else if (e.target.innerHTML == 'C') {
+                    string = ""
+                    document.querySelector('input').value = string;
+                }
+                else {
+                    console.log(e.target)
+                    string = string + e.target.innerHTML;
+                    document.querySelector('input').value = string;
+                }
+
+            })
+        })
+    </script>
+
+</body>
+
+</html>
